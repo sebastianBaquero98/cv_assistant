@@ -8,7 +8,8 @@ load_dotenv()  # Loads the .env file
 
 client = openai
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+#openai.api_key = os.getenv("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 if "start_chat" not in st.session_state:
     st.session_state.start_chat = False
@@ -53,7 +54,7 @@ if st.session_state.start_chat:
         
         run = client.beta.threads.runs.create(
             thread_id=st.session_state.thread_id,
-            assistant_id=os.getenv("OPEN_AI_ASSISTANT_ID"),
+            assistant_id=st.secrets["OPENAI_API_KEY"],
         )
 
         while run.status != 'completed':
