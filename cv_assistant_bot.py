@@ -54,7 +54,7 @@ if st.session_state.start_chat:
         
         run = client.beta.threads.runs.create(
             thread_id=st.session_state.thread_id,
-            assistant_id=st.secrets["OPENAI_API_KEY"],
+            assistant_id=st.secrets["OPEN_AI_ASSISTANT_ID"],
         )
 
         while run.status != 'completed':
