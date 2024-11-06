@@ -16,7 +16,7 @@ if "start_chat" not in st.session_state:
 if "thread_id" not in st.session_state:
     st.session_state.thread_id = None
 
-st.set_page_config(page_title="XYZ", page_icon=":robot:")
+st.set_page_config(page_title="Sebas Assistant", page_icon=":robot:")
 
 
 st.title("Chatea con la hoja de vida de Sebastian Baquero")
